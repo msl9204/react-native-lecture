@@ -1,4 +1,4 @@
-package com.fooddeliveryapp.newarchitecture;
+package com.soopr.fooddeliveryapp.newarchitecture;
 
 import android.app.Application;
 import androidx.annotation.NonNull;
@@ -19,9 +19,9 @@ import com.facebook.react.fabric.CoreComponentsRegistry;
 import com.facebook.react.fabric.EmptyReactNativeConfig;
 import com.facebook.react.fabric.FabricJSIModuleProvider;
 import com.facebook.react.uimanager.ViewManagerRegistry;
-import com.fooddeliveryapp.BuildConfig;
-import com.fooddeliveryapp.newarchitecture.components.MainComponentsRegistry;
-import com.fooddeliveryapp.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
+import com.soopr.fooddeliveryapp.BuildConfig;
+import com.soopr.fooddeliveryapp.newarchitecture.components.MainComponentsRegistry;
+import com.soopr.fooddeliveryapp.newarchitecture.modules.MainApplicationTurboModuleManagerDelegate;
 import java.util.ArrayList;
 import java.util.List;
 
