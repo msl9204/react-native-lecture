@@ -18,6 +18,7 @@ import {Alert} from 'react-native';
 import {useAppDispatch} from './src/store/index';
 import userSlice from './src/slices/user';
 import orderSlice from './src/slices/order';
+import usePermissions from './src/hooks/usePermissions';
 
 export type LoggedInParamList = {
   Orders: undefined;
@@ -38,6 +39,8 @@ function AppInner() {
   const dispatch = useAppDispatch();
   const isLoggedIn = useSelector((state: RootState) => !!state.user.email); // provider 내부에서만 useSelector 쓸수있음
   const [socket, disconnect] = useSocket();
+
+  usePermissions();
 
   useEffect(() => {
     console.log('interceptor 실행!!!');

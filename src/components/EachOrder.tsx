@@ -16,6 +16,7 @@ import {RootState} from '../store/reducer';
 import {NavigationProp, useNavigation} from '@react-navigation/native';
 import {LoggedInParamList} from '../../AppInner';
 import NaverMapView, {Marker, Path} from 'react-native-nmap';
+import getDistanceFromLatLonInKm from "../util";
 
 // 반복 대상이 되는 애들은 무조건 컴포넌트로 분리해라
 function EachOrder({item}: {item: Order}) {
@@ -64,6 +65,15 @@ function EachOrder({item}: {item: Order}) {
       <Pressable onPress={toggleDetail} style={styles.info}>
         <Text style={styles.eachInfo}>
           {item.price.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}원
+        </Text>
+        <Text style={styles.eachInfo}>
+          {getDistanceFromLatLonInKm(
+            start.latitude,
+            start.longitude,
+            end.latitude,
+            end.longitude,
+          ).toFixed(1)}
+          km
         </Text>
         <Text>삼성동</Text>
         <Text>왕십리동</Text>
